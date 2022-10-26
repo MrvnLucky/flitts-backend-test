@@ -25,7 +25,7 @@ class MovieController {
     }
 
     axios({
-      url: `${process.env.OMDB_URL}&s=${title}&page=${page}&type=${type}&y=${year}`,
+      url: `https://omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&s=${title}&page=${page}&type=${type}&y=${year}`,
       method: "get"
     })
       .then((response) => {
