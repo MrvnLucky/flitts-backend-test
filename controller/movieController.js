@@ -24,14 +24,6 @@ class MovieController {
       year = null
     }
 
-    // try {
-    //   if (!title) {
-    //     throw { name: 'Bad Request', message: "Please input movie title!" }
-    //   }
-    // } catch (error) {
-    //   console.log(error)
-    // }
-
     axios({
       url: `${process.env.OMDB_URL}&s=${title}&page=${page}&type=${type}&y=${year}`,
       method: "get"
@@ -70,14 +62,6 @@ class MovieController {
     if (plot !== "short" || plot !== "full") {
       plot = "short"
     }
-
-    // try {
-    //   if (!title) {
-    //     throw { name: "Bad Request", message: "Please input movie title!" }
-    //   }
-    // } catch (error) {
-    //   console.log(error)
-    // }
 
     axios({
       url: `${process.env.OMDB_URL}&t=${title}&i=${id}&type=${type}&y=${year}&plot=${plot}`,
